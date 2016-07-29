@@ -4,8 +4,9 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-double factorial(int n);
 int menu();
+double factorial(int n);
+int suma(int num,int sum);
 
 int main(int argc, char const *argv[]){
 	int opcion=0;
@@ -30,6 +31,23 @@ int main(int argc, char const *argv[]){
 			} // fin for
  
 		} // fin if 
+		else{
+			int numero1,numero2;
+    		int suma1=1,suma2=1;
+    		cout<<"Ingrese primer numero"<<endl;
+    		cin>>numero1;
+    		cout<<"Ingrese segundo numero"<<endl;
+    		cin>>numero2;
+    		sum1=suma(numero1,suma1);
+    		sum2=suma(numero2,suma2);
+    		if((suma1==numero2) && (suma2==numero1)){
+        		cout<<"Los numeros "<<n1<<" y "<<
+        		n2<<" son numeros amigos";
+    		}else{
+        		cout<<"Los numeros "<<n1<<" y "<<
+        		n2<<" no son numeros amigos";
+    		}
+		} // fin else
 
 	} //fin while
 
@@ -59,3 +77,11 @@ double factorial(int num){
     return factorial;
 }
 
+int suma(int num,int sum){
+    for(int i=2;i<num;i++){
+    	if(num % i==0){
+    		sum+=i;
+    	}
+    }
+    return sum;
+}
