@@ -6,7 +6,7 @@ using std::endl;
 
 int menu();
 double factorial(int n);
-int suma(int num,int sum);
+//int suma(int num,int sum);
 
 int main(int argc, char const *argv[]){
 	int opcion=0;
@@ -27,28 +27,40 @@ int main(int argc, char const *argv[]){
 						suma+=factorial(fact[i]-48);
 					}
 				}
+				break;
 			
 			} // fin for
  
 		} // fin if 
 		else{
-			int numero1,numero2;
-    		int suma1=1,suma2=1;
-    		cout<<"Ingrese primer numero"<<endl;
-    		cin>>numero1;
-    		cout<<"Ingrese segundo numero"<<endl;
-    		cin>>numero2;
-    		sum1=suma(numero1,suma1);
-    		sum2=suma(numero2,suma2);
-    		if((suma1==numero2) && (suma2==numero1)){
-        		cout<<"Los numeros "<<n1<<" y "<<
-        		n2<<" son numeros amigos";
-    		}else{
-        		cout<<"Los numeros "<<n1<<" y "<<
-        		n2<<" no son numeros amigos";
-    		}
-		} // fin else
+			if (opcion==2){
+				int a,b,suma1=0,suma2=0,numero1,numero2;
+				cout<<" Ingrese primer numero:";
+				cin>>numero1;
+				cout<<" Ingrese segundo numero:";
+				cin>>numero2;
 
+				for(a=1;a<=numero1/2;a++){
+					if (numero1 % a==0){
+						suma1=suma1+a;
+					}
+				}
+
+				for(b=1;b<=numero2/2;b++){
+					if (numero2%b==0){
+						suma2=suma2+b;
+					}
+				}
+
+				if (suma1==numero2){
+					cout<<" El numero es amigo"<<endl;
+				}
+				else {
+					cout<<" El numero no es amigo"<<endl;
+				}
+			}
+		}
+			
 	} //fin while
 
 return 0;	
@@ -77,7 +89,7 @@ double factorial(int num){
     return factorial;
 }
 
-int suma(int num,int sum){
+/*int suma(int num,int sum){
     for(int i=2;i<num;i++){
     	if(num % i==0){
     		sum+=i;
@@ -85,3 +97,4 @@ int suma(int num,int sum){
     }
     return sum;
 }
+*/
