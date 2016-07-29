@@ -6,7 +6,6 @@ using std::endl;
 
 int menu();
 double factorial(int n);
-//int suma(int num,int sum);
 
 int main(int argc, char const *argv[]){
 	int opcion=0;
@@ -34,7 +33,8 @@ int main(int argc, char const *argv[]){
 		} // fin if 
 		else{
 			if (opcion==2){
-				int a,b,suma1=0,suma2=0,numero1,numero2;
+				int numero1,numero2, a,b;
+				int suma1=0,suma2=0;
 				cout<<" Ingrese primer numero:";
 				cin>>numero1;
 				cout<<" Ingrese segundo numero:";
@@ -89,12 +89,3 @@ double factorial(int num){
     return factorial;
 }
 
-/*int suma(int num,int sum){
-    for(int i=2;i<num;i++){
-    	if(num % i==0){
-    		sum+=i;
-    	}
-    }
-    return sum;
-}
-*/
