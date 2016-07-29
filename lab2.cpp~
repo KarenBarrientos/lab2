@@ -9,29 +9,25 @@ int menu();
 
 int main(int argc, char const *argv[]){
 	int opcion=0;
-	char fact[15];
+	char fact[5];
 	
 	
 	while ( (opcion = menu()) != 3){
 		int suma=0;
-		if (opcion == 1){
+		if (opcion == 1)
+			cout<<"Ingrese numero: "<<endl;
+        		cin>>fact;
 
-			for (int i = 0; i < 100000; ++i){
-				
-			//fact=(char)i;
-
-				for(int i=0;i<15;i++){
-					if(fact[i] != '\0'){
-						cout<<factorial(fact[i]-48)<<endl;
-						suma+=factorial(fact[i]-48);
-					}
+			for(int i=0;i<5;i++){
+				if(fact[i] != '\0'){
+					cout<<factorial(fact[i]-48)<<endl;
+					suma+=factorial(fact[i]-48);
 				}
+			}
 			
-			} // fin for
- 
-		} // fin if 
-
-	} //fin while
+	//	else 
+			
+	}
 
 return 0;	
 }
